@@ -1,28 +1,8 @@
-const fs = require('fs');
+const { partOne } = require("./part_1/main");
+const { partTwo } = require("./part_2/main");
 
-try {
-    const jsonData = fs.readFileSync('day_1/input.json', 'utf8');
-    const data = JSON.parse(jsonData);
+console.log("######################## PART 1 ########################");
+partOne();
 
-    const count = findAmountOfIncreases(data);
-    console.log("Result: " + count);
-} catch (err) {
-    console.error(err);
-}
-
-function findAmountOfIncreases(sonarSweeps) {
-    const INCREASE = "increased";
-    const DECREASE = "decreased";
-    const NO_CHANGE = "has not changed";
-    
-    let measurementDifferences = [null];
-    for(let i = 1; i < sonarSweeps.length; i++) {
-        measurementDifferences.push(sonarSweeps[i] > sonarSweeps[i - 1] ? INCREASE : sonarSweeps[i] == sonarSweeps[i - 1] ? NO_CHANGE : DECREASE);
-    }
-    
-    const count = measurementDifferences.filter(value => value == INCREASE).length;
-    
-    console.log(measurementDifferences);
-
-    return count;
-}
+console.log("######################## PART 2 ########################");
+partTwo();
