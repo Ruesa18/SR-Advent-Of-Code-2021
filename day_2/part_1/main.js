@@ -8,9 +8,7 @@ function partOne() {
     const data = JSON.parse(jsonData);
 
     for(let value of data) {
-        console.log(value);
         let dataSet = value.split(" ");
-        console.log(dataSet);
         
         if(dataSet[0] == "forward") {
             forwardChanges.push(parseInt(dataSet[1]));
