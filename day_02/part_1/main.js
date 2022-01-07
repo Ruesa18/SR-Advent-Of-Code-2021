@@ -4,7 +4,7 @@ function partOne() {
     let depthChanges = [];
     let forwardChanges = [];
 
-    const jsonData = fs.readFileSync('day_2/input.json', 'utf8');
+    const jsonData = fs.readFileSync('day_02/input.json', 'utf8');
     const data = JSON.parse(jsonData);
 
     for(let value of data) {

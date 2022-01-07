@@ -2,7 +2,7 @@ const fs = require('fs');
 
 function partOne() {
     try {
-        const jsonData = fs.readFileSync('day_1/input.json', 'utf8');
+        const jsonData = fs.readFileSync('day_01/input.json', 'utf8');
         const data = JSON.parse(jsonData);
     
         const count = findAmountOfIncreases(data);

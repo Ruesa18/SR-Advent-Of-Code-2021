@@ -5,7 +5,7 @@ function partTwo() {
     let forwardChanges = [];
     let aim = 0;
 
-    const jsonData = fs.readFileSync('day_2/input.json', 'utf8');
+    const jsonData = fs.readFileSync('day_02/input.json', 'utf8');
     const data = JSON.parse(jsonData);
 
     for(let value of data) {

@@ -3,7 +3,7 @@ const { MeasurementWindowCollection } = require('./MeasurementWindowCollection')
 
 function partTwo() {
     try {
-        const jsonData = fs.readFileSync('day_1/input.json', 'utf8');
+        const jsonData = fs.readFileSync('day_01/input.json', 'utf8');
         const data = JSON.parse(jsonData);
     
         const measurementWindows = getMeasurementWindows(data);
