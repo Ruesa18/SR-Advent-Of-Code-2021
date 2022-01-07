@@ -1,11 +1,17 @@
 const fs = require('fs');
+const { MeasurementWindowCollection } = require('./MeasurementWindowCollection');
 
 function partTwo() {
     try {
         const jsonData = fs.readFileSync('day_1/input.json', 'utf8');
         const data = JSON.parse(jsonData);
     
-        const count = findAmountOfIncreases(data);
+        const measurementWindows = getMeasurementWindows(data);
+        
+        measurementWindows.cleanup();
+        console.log(measurementWindows.data);
+
+        const count = findAmountOfIncreases(measurementWindows.getSonarDataSums());
         console.log("Result: " + count);
     } catch (err) {
         console.error(err);
@@ -25,9 +31,15 @@ function findAmountOfIncreases(sonarSweeps) {
     
     const count = measurementDifferences.filter(value => value == INCREASE).length;
     
-    console.log(measurementDifferences);
-
     return count;
+}
+
+function getMeasurementWindows(data) {
+    const measurementWindowCollection = new MeasurementWindowCollection();
+    for(let i = 0; i < data.length; i++) {
+        measurementWindowCollection.addData(data[i]);
+    }
+    return measurementWindowCollection;
 }
 
 module.exports.partTwo = partTwo;
