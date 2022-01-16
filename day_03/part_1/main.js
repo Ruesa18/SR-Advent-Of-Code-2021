@@ -6,7 +6,7 @@ function partOne() {
     const data = JSON.parse(jsonData);
 
     let diagnosticReport = new DiagnosticReport(data);
-    console.log(diagnosticReport.findGammaAndEpsilon().getPowerConsumption());
+    console.log("Result: " + diagnosticReport.findGammaAndEpsilon().getPowerConsumption());
 }
 
 module.exports.partOne = partOne;
