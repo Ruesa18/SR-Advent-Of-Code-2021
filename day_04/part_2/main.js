@@ -15,8 +15,6 @@ function partTwo() {
     let result = bingo.readAllNumbers(data.numbers);
     
     if(result.cardCache !== false) {
-        let sum = result.cardCache.getSumOfUnmarked();
-
         console.log("Result: " + (result.sumCache * parseInt(result.numberCache)));
     }else{
         console.log("No winner found :(");
